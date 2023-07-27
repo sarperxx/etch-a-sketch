@@ -32,6 +32,11 @@ const createRandomRGB = () => {
   let b = Math.floor(Math.random() * 256);
   return "rgb(" + r + "," + g + "," + b + ")";
 };
+
+const gray = () => {
+  let r = Math.floor(Math.random() * 256);
+  return "rgb(" + r + "," + r + "," + r + ")";
+};
 //Default grid
 makeRows(16);
 makeColumns(16);
@@ -49,6 +54,14 @@ function changeblack() {
   addEventListener("mouseover", (event) => {
     if (event.target.className === "cell") {
       event.target.style.backgroundColor = "black";
+    }
+  });
+}
+//gray to black
+function graytoblack() {
+  addEventListener("mouseover", (event) => {
+    if (event.target.className === "cell") {
+      event.target.style.backgroundColor = gray();
     }
   });
 }
